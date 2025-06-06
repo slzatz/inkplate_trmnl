@@ -174,10 +174,12 @@ void displayImageFromUrl(String imageUrl) {
     
     if (imageUrl.endsWith(".bmp")) {
         imageLoaded = display.drawImage(imageUrl, Image::BMP, 0, 0, false, false);
-    } else if (imageUrl.endsWith(".jpg") || imageUrl.endsWith(".jpeg")) {
-        imageLoaded = display.drawImage(imageUrl, Image::JPG, 0, 0, false, false);
     } else if (imageUrl.endsWith(".png")) {
         imageLoaded = display.drawImage(imageUrl, Image::PNG, 0, 0, false, false);
+    //} else if (imageUrl.endsWith(".jpg") || imageUrl.endsWith(".jpeg")) {
+    // assume jpg is the default format if no extension is provided
+    } else {
+        imageLoaded = display.drawImage(imageUrl, Image::JPG, 0, 0, false, false);
     }
     
     if (!imageLoaded) {
