@@ -23,7 +23,7 @@ void setup() {
     
     Serial.begin(115200);
     
-    display.setRotation(0);  // landscape
+    display.setRotation(3);  // 0 = landscape; 3 = portrait
     display.begin();
     display.setTextColor(0, 7);
     display.setTextSize(3);
